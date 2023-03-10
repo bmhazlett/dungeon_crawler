@@ -14,7 +14,7 @@ def main(stdscr):
     curr_pos = [1, 1]
     for i in range(len(testing_board.board_list)):
         for j in range(len(testing_board.board_list[i])):
-            if testing_board.board_list[i][j].get_visible() == '1':
+            if testing_board.board_list[i][j].get_room() == testing_board.board_list[curr_pos[0]][curr_pos[1]].get_room():
                 stdscr.addstr(i + OFFSET_X, j + OFFSET_Y, testing_board.board_list[i][j].get_display_value())
             if i == curr_pos[0] and j == curr_pos[1]:
                 stdscr.addstr(i + OFFSET_X, j + OFFSET_Y, '@')
@@ -41,10 +41,7 @@ def main(stdscr):
             stdscr.addstr(0, 0, 'h')
             for i in range(len(testing_board.board_list)):
                 for j in range(len(testing_board.board_list[i])):
-                    adj_rooms = (testing_board.board_list[curr_pos[0]][curr_pos[1]].get_room(), testing_board.board_list[curr_pos[0] - 1][curr_pos[1]].get_room(),
-                                 testing_board.board_list[curr_pos[0] + 1][curr_pos[1]].get_room(), testing_board.board_list[curr_pos[0]][curr_pos[1] - 1].get_room(),
-                                 testing_board.board_list[curr_pos[0]][curr_pos[1] + 1].get_room())
-                    if testing_board.board_list[i][j].get_room() in adj_rooms:
+                    if testing_board.board_list[i][j].get_room() == testing_board.board_list[curr_pos[0]][curr_pos[1]].get_room():
                         testing_board.board_list[i][j].set_visible('1')
 
             for i in range(len(testing_board.board_list)):

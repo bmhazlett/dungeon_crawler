@@ -29,3 +29,5 @@ class Cell:
     def fire_trigger(self):
         if self.get_display_value() == "D":
             return "DOOR"
+        if self.get_display_vaule() == "S":
+            return "STAIR"
