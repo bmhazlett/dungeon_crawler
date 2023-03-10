@@ -1,4 +1,4 @@
-class cell:
+class Cell:
     def __init__(self, display_value='.', visible='1', room=-1, trigger=0):
         self.display_value = display_value
         self.visible = visible

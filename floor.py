@@ -1,6 +1,6 @@
-import cell
+from cell import Cell
 
-class board:
+class Floor:
     def __init__(self, map_path: str, starting_visiblity_mapping_path: str, room_path: str, trigger_path: str):
         self.board_list = self.read_in_map(map_path, starting_visiblity_mapping_path, room_path, trigger_path)
 
@@ -25,7 +25,7 @@ class board:
             for j in range(len(map_string[i])):
                 ofp.write(str(len(map_string)) + " " +  str(len(vis_string)) + " " +  str(len(room_string)) + " " +  str(len(trigger_string)))
                 ofp.write(str(len(map_string[i])) + " " +  str(len(vis_string[i])) + " " +  str(len(room_string[i])) + " " +  str(len(trigger_string[i])))
-                new_cell = cell.cell(map_string[i][j], vis_string[i][j], room_string[i][j], trigger_string[i][j])
+                new_cell = Cell(map_string[i][j], vis_string[i][j], room_string[i][j], trigger_string[i][j])
                 temp_board[i].append(new_cell)
 
         return temp_board

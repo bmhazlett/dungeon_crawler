@@ -1,6 +1,6 @@
 from curses import wrapper
 import curses
-import board
+from floor import Floor
 
 OFFSET_X = 1
 OFFSET_Y = 1
@@ -9,7 +9,7 @@ def main(stdscr):
     stdscr.clear()
     curses.curs_set(0)
 
-    testing_board = board.board('testing/test_board.txt', 'testing/test_vis.txt', 'testing/test_room.txt', 'testing/test_trigger.txt')
+    testing_board = Floor('testing/test_board.txt', 'testing/test_vis.txt', 'testing/test_room.txt', 'testing/test_trigger.txt')
 
     curr_pos = [1, 1]
     for i in range(len(testing_board.board_list)):
