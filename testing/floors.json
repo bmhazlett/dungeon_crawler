@@ -1,0 +1,6 @@
+{
+    "Floors": [
+	{"Floor": {"board_file": "testing/test_board.txt", "vis_file": "testing/test_vis.txt", "room_file": "testing/test_room.txt"}}, 
+	{"Floor": {"board_file": "testing/test_board2.txt", "vis_file": "testing/test_vis2.txt", "room_file": "testing/test_room2.txt"}}
+    ]
+}

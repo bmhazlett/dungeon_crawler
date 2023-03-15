@@ -1,20 +1,29 @@
-from curses import wrapper
 import curses
+import json
+from curses import wrapper
 from floor import Floor
 from player import Player
 from game import Game
 
-def set_up_floors(mapping_json):
-    
 
+def set_up_floors(mapping_json):
+    with open(mapping_json) as f:
+        data = json.load(f)
+
+    floor_list = []
+    for floor in data["Floors"]:
+        vals = floor["Floor"]
+        floor_list.append(Floor(vals["board_file"], vals["vis_file"], vals["room_file"]))
+
+    return floor_list
+    
 
 def main(stdscr):
     stdscr.clear()
     curses.curs_set(0)
 
-    starting_board = Floor('testing/test_board.txt', 'testing/test_vis.txt', 'testing/test_room.txt')
-
-    this_game = Game('floors', starting_board, 'floor_mapping')
+    floor_list = set_up_floors('testing/floors.json')
+    this_game = Game(floor_list, floor_list[0], 'floor_mapping')
     
     curr_player = Player('@', 1, 1)
     this_game.curr_floor.update_visiblity(curr_player, stdscr)
