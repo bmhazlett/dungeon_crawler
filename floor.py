@@ -3,6 +3,9 @@ from cell import Cell
 class Floor:
     def __init__(self, map_path: str, starting_visiblity_mapping_path: str, room_path: str, trigger_path: str):
         self.board_list = self.read_in_map(map_path, starting_visiblity_mapping_path, room_path, trigger_path)
+        self.OFFSET_X = 1
+        self.OFFSET_Y = 1
+
 
     def read_in_map(self, map_path: str, starting_visibility_mapping_path: str, room_path: str, trigger_path: str):
         mfp = open(map_path)
@@ -29,3 +32,15 @@ class Floor:
                 temp_board[i].append(new_cell)
 
         return temp_board
+
+    def display_board(self, curr_player, stdscr):
+        for i in range(len(self.board_list)):
+            for j in range(len(self.board_list[i])):
+                if self.board_list[i][j].get_room() == self.board_list[curr_player.get_x()][curr_player.get_y()].get_room():
+                    stdscr.addstr(i + self.OFFSET_X, j + self.OFFSET_Y, self.board_list[i][j].get_display_value())
+                    if i == curr_player.get_x() and j == curr_player.get_y():
+                        stdscr.addstr(i + self.OFFSET_X, j + self.OFFSET_Y, curr_player.get_display_value())
+        stdscr.refresh()
+
+        
+        
