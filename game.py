@@ -23,4 +23,4 @@ class Game:
         self.floor_mapping = floor_mapping
 
     def move_next_floor(self, x, y):
-        
+        pass

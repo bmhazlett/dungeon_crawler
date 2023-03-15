@@ -1,8 +1,0 @@
-;; This buffer is for text that is not saved, and for Lisp evaluation.
-;; To create a file, visit it with <open> and enter text in its buffer.
-
-Information to be Encoded
-Location in the next floor x,y
-  (use the current position just don't update it)
-Which file to load
-  Probably just need a mapping file
