@@ -1,6 +1,5 @@
 {
-    "Floors": [
-	{"Floor": {"file_name": "testing/test_board.txt", "stairs": [{}},
-	{"Floor": {"file_name": "testing/test_board2.txt"}}
-    ]
+    "floor1": {"stairs": {"7,7": "floor2"}},
+    "floor2": {"stairs": {"7,9": "floor1", "7,35": "floor3"}},
+    "floor3": {"stairs": {"7,9": "floor1", "7,37": "floor2"}}
 }

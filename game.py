@@ -23,4 +23,8 @@ class Game:
         self.floor_mapping = floor_mapping
 
     def move_next_floor(self, x, y):
-        pass
+        floor_name = self.curr_floor.get_floor_name()
+        next_floor = self.floor_mapping[floor_name]["stairs"][str(x) + "," + str(y)]
+        for floor in self.floors:
+            if floor.get_floor_name() == next_floor:
+                self.set_curr_floor(floor)

@@ -19,7 +19,7 @@ class Cell:
     def set_room(self, room):
         self.room = room
 
-    def fire_trigger(self, stdscr, testing_board, curr_player):
+    def fire_trigger(self, stdscr, testing_board, curr_player, this_game):
         if self.get_display_value() == 'D':
             stdscr.addstr(0, 0, 'D')
             for i in range(len(testing_board.board_list)):
@@ -29,3 +29,5 @@ class Cell:
 
         if self.get_display_value() == 'S':
             stdscr.addstr(0, 0, 'S')
+            this_game.move_next_floor(curr_player.get_x(), curr_player.get_y())
+            

@@ -1,11 +1,17 @@
 from cell import Cell
 
 class Floor:
-    def __init__(self, map_path: str, starting_visiblity_mapping_path: str, room_path: str):
+    def __init__(self, map_path: str, starting_visiblity_mapping_path: str, room_path: str, floor_name: str):
         self.board_list = self.read_in_map(map_path, starting_visiblity_mapping_path, room_path)
+        self.floor_name = floor_name
         self.OFFSET_X = 1
         self.OFFSET_Y = 1
 
+    def get_floor_name(self):
+        return self.floor_name
+
+    def set_floor_name(self, floor_name):
+        self.floor_name = floor_name
 
     def read_in_map(self, map_path: str, starting_visibility_mapping_path: str, room_path: str):
         mfp = open(map_path)
@@ -37,6 +43,9 @@ class Floor:
                 if self.board_list[i][j].get_visible() == '1' and (curr_player.get_x() == i and curr_player.get_y() == j):
                     stdscr.addstr(i + self.OFFSET_X, j + self.OFFSET_Y, curr_player.get_display_value())
 
+                if self.board_list[i][j].get_visible() == '0':
+                    stdscr.addstr(i + self.OFFSET_X, j + self.OFFSET_Y, ' ')
+                    
 
     def update_visiblity(self, curr_player, stdscr):
         for i in range(len(self.board_list)):
