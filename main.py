@@ -30,11 +30,12 @@ def main(stdscr):
     stdscr.clear()
     curses.curs_set(0)
 
-    floor_list = set_up_floors('testing/floors.json')
-    stair_mapping = set_up_mapping('testing/stair_mapping.json')
+    floor_list = set_up_floors('tower/floors.json')
+    stair_mapping = set_up_mapping('tower/stair_mapping.json')
     this_game = Game(floor_list, floor_list[0], stair_mapping)
 
-    curr_player = Player('@', 1, 1)
+    curr_player = Player('@', 15, 33)
+    #curr_player = Player('@', 1, 1)
     this_game.curr_floor.update_visiblity(curr_player, stdscr)
     this_game.curr_floor.display_board(curr_player, stdscr)
 
@@ -47,8 +48,8 @@ def main(stdscr):
 
     while True:
         #### Debug ####
-        stdscr.addstr(0, 3, str(curr_player.get_x()))
-        stdscr.addstr(0, 6, str(curr_player.get_y()))        
+        stdscr.addstr(0, 3, str(curr_player.get_x()) + ' ')
+        stdscr.addstr(0, 6, str(curr_player.get_y()) + ' ')        
         stdscr.addstr(0, 9, this_game.curr_floor.get_floor_name())
         #### Debug ####
         

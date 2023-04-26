@@ -1,0 +1,6 @@
+{
+    "floor0": {"stairs": {"7,5": "floor1"}},
+    "floor1": {"stairs": {"7,6": "floor0", "9,5": "floor2"}},
+    "floor2": {"stairs": {"9,6": "floor1", "9,60": "floor3"}},
+    "floor3": {"stairs": {"9,57": "floor2"}}
+}

@@ -48,7 +48,9 @@ class Floor:
                     
 
     def update_visiblity(self, curr_player, stdscr):
+        output_file = open('output', 'a')
         for i in range(len(self.board_list)):
             for j in range(len(self.board_list[i])):
+                output_file.write(str(len(self.board_list)) + ' '  + str(len(self.board_list[i])) + '\n')
                 if self.board_list[i][j].get_room() == self.board_list[curr_player.get_x()][curr_player.get_y()].get_room():
                     self.board_list[i][j].set_visible('1')
