@@ -6,5 +6,6 @@
     "floor4": {"stairs": {"9,5": "floor3", "1,41": "floor5"}},
     "floor5": {"stairs": {"1,42": "floor4", "9,5": "floor6"}},
     "floor6": {"stairs": {"9,6": "floor5", "7,5": "floor7"}},
-    "floor7": {"stairs": {"9,5": "floor6"}}
+    "floor7": {"stairs": {"9,5": "floor6", "8,59": "floor8"}},
+    "floor8": {"stairs": {"8,60": "floor7", "9,5": "floor9"}}
 }
