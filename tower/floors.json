@@ -9,6 +9,7 @@
 	{"Floor": {"floor_name": "floor6", "board_file": "tower/floor6.txt", "vis_file": "tower/floor6_vis.txt", "room_file": "tower/floor6_room.txt"}},
 	{"Floor": {"floor_name": "floor7", "board_file": "tower/floor7.txt", "vis_file": "tower/floor7_vis.txt", "room_file": "tower/floor7_room.txt"}},
 	{"Floor": {"floor_name": "floor8", "board_file": "tower/floor8.txt", "vis_file": "tower/floor8_vis.txt", "room_file": "tower/floor8_room.txt"}},
-	{"Floor": {"floor_name": "floor9", "board_file": "tower/floor9.txt", "vis_file": "tower/floor9_vis.txt", "room_file": "tower/floor9_room.txt"}}
+	{"Floor": {"floor_name": "floor9", "board_file": "tower/floor9.txt", "vis_file": "tower/floor9_vis.txt", "room_file": "tower/floor9_room.txt"}},
+	{"Floor": {"floor_name": "floor10", "board_file": "tower/floor10.txt", "vis_file": "tower/floor10_vis.txt", "room_file": "tower/floor10_room.txt"}}
     ]
 }
